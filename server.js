@@ -6,7 +6,9 @@ const fs = require("fs");
 app.set("view engine", "ejs")
 	.use(express.static(__dirname+"/public"));
 
-app.get('/', (req, res) => res.render('index.ejs'));
+app.get('/', (req, res) => res.render('login.ejs'));
+app.get('/map', (req, res) => res.render('index.ejs'));
+app.get('/create', (req, res) => res.render('createAccount.ejs'));
 
 const server = app.listen(8080, () => {
 	let port = server.address().port;
