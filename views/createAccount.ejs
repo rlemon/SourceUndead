@@ -27,7 +27,7 @@
 					</div>
 
 					<div class="pure-controls">
-						<button type="submit" class="pure-button pure-button-primary">Submit</button>
+						<button id="createAccount" class="pure-button pure-button-primary">Submit</button>
 						<small>
 							<span class="inSpan">Already have an account? <a href="/">Return to Login</a></span>
 						</small>
@@ -36,7 +36,35 @@
 			</form>
 		</div>
 		<script>
+			"use strict";
 			window.onload = () => document.getElementById("name").focus();
+			document.getElementById("createAccount").addEventListener("click", event => {
+				event.preventDefault();
+				let username = document.getElementById("name").value;
+				let password = document.getElementById("password").value;
+				let email = document.getElementById("email").value;
+				let showError = document.getElementById("error");
+				let error = 0;
+				let errorMsg = "";
+				console.log(username.length, password.length);
+				if (username.length < 3) {
+					error++;
+					errorMsg += " Username must be longer than 3 characters.";
+				}
+				if (password.length < 8) {
+					error++;
+					errorMsg += " Password must be 8 or more characters.";
+				}
+				if (!(/\S+@\S+\.\S+/.test(email))) {
+					error++;
+					errorMsg += " Please enter a valid email@address.com.";
+				}
+
+				if (error) {
+					showError.classList.add("error");
+					showError.textContent = errorMsg;
+				}
+			});
 		</script>
 	</body>
 </html>
