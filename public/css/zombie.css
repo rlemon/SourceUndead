@@ -2,41 +2,17 @@ body {
 	background-color:black;
 	color:white;
 }
+input {
+	color:black;
+}
 h1,h2,h3,h4,h5,h6 { 
 	text-align: center; 
 	text-decoration: underline;
-}
-.label {
-    width:180px;
-    clear:left;
-    text-align:right;
-    padding-right:10px;
-}
-form {
-	width: 850px;
-	margin: 0 auto;
-}
-input:not(.btn) {
-	width: 350px;
-}
-.inSpan { margin-left: 10px; }
-input, .label, .divBtn, span[class="error"], .inSpan {
-    float:left;
-    margin-top:8px;
 }
 span[class="error"] {
 	width:auto;
 	padding-left:5px;
 	display:inline;
-}
-.divBtn {
-	border:1px solid white;
-	padding:4px;
-	background-color: black;
-	color:white;
-}
-.divBtn:hover {
-	text-decoration: underline;
 }
 .error, .error-msg {
 	color:red;
@@ -53,4 +29,11 @@ span[class="error"] {
 	text-align: center;
 	width: 550px;
 	margin-bottom: 10px;
+}
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 768px;
 }

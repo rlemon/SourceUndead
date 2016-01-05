@@ -1,34 +1,37 @@
+<!DOCTYPE html>
 <html>
 	<head>
-	<title>Login</title>
-	<link rel="stylesheet" href="../css/zombie.css">
-</head>
-<body>
-	<h1>Source Undead</h1>
-	<div id="error"></div>
-	<form name="loginForm" id="login">
-		<div>
-			<div>
-				<label class="label">Username:</label>
-				<input type="text" name="user" placeholder="Username.." required />
-			</div>
-			<div>
-				<label class="label">Password:</label>
-				<input type="password" name="password" placeholder="Password.." required />
-			</div>
-			<div>
-				<label class="label">&nbsp;</label>
-				<button class="divBtn">Login</button>
-				<small>
-					<span class="inSpan">Don't have an account? <a href="/create">Create An Account</a>!</span>
-				</small>
-			</div>
+		<title>Login</title>
+		<link rel="stylesheet" href="../css/pure.min.css">
+		<link rel="stylesheet" href="../css/zombie.css">
+	</head>
+	<body>
+		<h2>Source Undead :: Login</h2>
+		<div id="error"></div>
+		<div class="content">
+			<form class="pure-form pure-form-aligned" name="loginForm" id="login">
+				<fieldset>
+					<div class="pure-control-group">
+						<label for="name">Username</label>
+						<input class="pure-input-1-2" id="name" type="text" placeholder="Username">
+					</div>
+
+					<div class="pure-control-group">
+						<label for="password">Password</label>
+						<input class="pure-input-1-2" id="password" type="password" placeholder="Password">
+					</div>
+
+					<div class="pure-controls">
+						<button type="submit" class="pure-button pure-button-primary">Submit</button>
+						<small>
+							<span class="inSpan">Don't have an account? <a href="/create">Create An Account</a>!</span>
+						</small>
+					</div>
+				</fieldset>
+			</form>
 		</div>
-	</form>
-</body>
-<script>
-window.onload = function() {
-	document.querySelector("[name='user']").focus();
-}
-</script>
+	</body>
+	<script>
+		window.onload = () => document.getElementById("name").focus();
+	</script>
 </html>

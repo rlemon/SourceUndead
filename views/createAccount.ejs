@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Create Account</title>
-	<link rel="stylesheet" href="../css/zombie.css">
-</head>
-<body>
-	<h1>Source Undead</h1>
-	<div id="error"></div>
-	<form name="createForm" id="create">
-		<div>
-			<div>
-				<label class="label">Username:</label>
-				<input type="text" name="username" placeholder="Username..." required />
-			</div>
-			<div>
-				<label class="label">Password:</label>
-				<input type="password" name="password" placeholder="Password..." required />
-			</div>
-			<div>
-				<label class="label">Confirm Password:</label>
-				<input type="password" name="confirm" placeholder="Confirm Password..." required />
-			</div>
-			<div>
-				<label class="label">Email Address:</label>
-				<input type="email" name="email" placeholder="Email..." required />
-			</div>
-			<div>
-				<label class="label">&nbsp;</label>
-				<button class="divBtn">Create Account</button>
-				<small>
-					<span class="inSpan">Already have an account? <a href="/">Return to Login</a></span>
-				</small>
-			</div>
+		<title>Create Account</title>
+		<link rel="stylesheet" href="../css/pure.min.css">
+		<link rel="stylesheet" href="../css/zombie.css">
+	</head>
+	<body>
+		<h2>Source Undead :: Create Account</h2>
+		<div id="error"></div>
+		<div class="content">
+			<form class="pure-form pure-form-aligned" name="createForm" id="create">
+				<fieldset>
+					<div class="pure-control-group">
+						<label for="name">Username</label>
+						<input class="pure-input-1-2" id="name" type="text" placeholder="Username">
+					</div>
+
+					<div class="pure-control-group">
+						<label for="password">Password</label>
+						<input class="pure-input-1-2" id="password" type="password" placeholder="Password">
+					</div>
+
+					<div class="pure-control-group">
+						<label for="email">Email Address</label>
+						<input class="pure-input-1-2" id="email" type="email" placeholder="Email Address">
+					</div>
+
+					<div class="pure-controls">
+						<button type="submit" class="pure-button pure-button-primary">Submit</button>
+						<small>
+							<span class="inSpan">Already have an account? <a href="/">Return to Login</a></span>
+						</small>
+					</div>
+				</fieldset>
+			</form>
 		</div>
-	</form>
-</body>
+		<script>
+			window.onload = () => document.getElementById("name").focus();
+		</script>
+	</body>
 </html>
