@@ -39,10 +39,6 @@ app.route('/login')
 					if (bool) {
 						req.session.loggedIn = true;
 						req.session.user = user.id;
-						req.session.x = user.x;
-						req.session.y = user.y;
-						req.session.hp = user.hp;
-						req.session.maxhp = user.maxhp;
 						req.session.username = user.username;
 						res.send({
 							"msg":"You have logged in!",
