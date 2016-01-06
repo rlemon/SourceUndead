@@ -9,7 +9,7 @@
 		<h2>Source Undead :: Login</h2>
 		<div id="error"></div>
 		<div class="content">
-			<form class="pure-form pure-form-aligned" name="loginForm" id="login">
+			<form class="pure-form pure-form-aligned">
 				<fieldset>
 					<div class="pure-control-group">
 						<label for="name">Username</label>
@@ -22,16 +22,47 @@
 					</div>
 
 					<div class="pure-controls">
-						<button type="submit" class="pure-button pure-button-primary">Submit</button>
-						<small>
-							<span class="inSpan">Don't have an account? <a href="/create">Create An Account</a>!</span>
-						</small>
+						<button id="login" class="pure-button pure-button-primary">Submit</button>
+					</div>
+					<div class="pure-controls">
+						<small>Don't have an account? <a href="/create">Create An Account</a>!</small>
 					</div>
 				</fieldset>
 			</form>
 		</div>
 	</body>
+	<script src="../js/functions.js"></script>
 	<script>
+		"use strict";
 		window.onload = () => document.getElementById("name").focus();
+		document.getElementById("login").addEventListener("click", event => {
+			event.preventDefault();
+			let username = document.getElementById("name").value;
+			let password = document.getElementById("password").value;
+			let showError = document.getElementById("error");
+			let error = 0;
+			let errorMsg = "";
+
+			validateInputLength(username, 3, "Usernames must be 3 or more characters.", error, errorMsg);
+			validateInputLength(password, 8, "Passwords must be 8 or more characters.", error, errorMsg);
+
+			if (error) {
+				showError.classList.add("error");
+				showError.textContent = errorMsg;
+			} else {
+				console.log("Sending request");
+				xhr({
+					url : "/login",
+					data :`user=${username}&pass=${password}`,
+					method: "POST"
+				}).then(data => {
+					let response = JSON.parse(data);
+					console.log(data);
+					if (response["flag"] === true) toggleError(showError, "success", "error");
+					else toggleError(showError, "error", "success");
+					showError.textContent = response["msg"];
+				});
+			}
+		}, false);
 	</script>
 </html>

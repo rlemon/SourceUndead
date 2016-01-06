@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5,h6 {
 	text-decoration: underline;
 }
 .error {
-	background: #dd514c;
+	background: #852020;
 	font-size: 100%;
 	letter-spacing: 0.01em;
 	color: white;
@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding-top: 1%;
 }
 .success {
-	background: #49E20E;
+	background: #387a1d;
 	font-size: 100%;
 	letter-spacing: 0.01em;
 	color: white;
@@ -35,4 +35,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding-left: 1em;
 	padding-right: 1em;
 	max-width: 768px;
+}
+a:visited {
+	color:white;
 }

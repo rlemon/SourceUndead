@@ -9,7 +9,7 @@
 		<h2>Source Undead :: Create Account</h2>
 		<div id="error"></div>
 		<div class="content">
-			<form class="pure-form pure-form-aligned" name="createForm" id="create">
+			<form class="pure-form pure-form-aligned">
 				<fieldset>
 					<div class="pure-control-group">
 						<label for="name">Username</label>
@@ -28,13 +28,14 @@
 
 					<div class="pure-controls">
 						<button id="createAccount" class="pure-button pure-button-primary">Submit</button>
-						<small>
-							<span class="inSpan">Already have an account? <a href="/">Return to Login</a></span>
-						</small>
+					</div>
+					<div class="pure-controls">
+						<small>Already have an account? <a href="/login">Return to Login</a></small>
 					</div>
 				</fieldset>
 			</form>
 		</div>
+		<script src="../js/functions.js"></script>
 		<script>
 			"use strict";
 			window.onload = () => document.getElementById("name").focus();
@@ -46,43 +47,32 @@
 				let showError = document.getElementById("error");
 				let error = 0;
 				let errorMsg = "";
-				if (username.length < 3) {
-					error++;
-					errorMsg += " Username must be longer than 3 characters.";
-				}
-				if (password.length < 8) {
-					error++;
-					errorMsg += " Password must be 8 or more characters.";
-				}
 
+				if (validateInputLength(username, 3)) {
+					error++;
+					errorMsg += " Usernames must be 3 or more characters."
+				}
+				if (validateInputLength(password, 8)) {
+					error++;
+					errorMsg += " Passwords must be 8 or more characters."
+				}
+				console.log("error", error)
 				if (error) {
 					showError.classList.add("error");
 					showError.textContent = errorMsg;
 				} else {
 					console.log("Sending request");
-					let xhr = new XMLHttpRequest();
-					xhr.open("POST", "/create");
-					xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-					xhr.onload = () => {
-						console.log("ready state", xhr.readyState);
-						if (xhr.readyState === 4) {
-							let response = JSON.parse(xhr.responseText);
-							console.log(response["flag"]);
-							if (response["flag"] === true) {
-								showError.classList.remove("success");
-								showError.classList.add("error");
-							} else {
-								showError.classList.remove("error");
-								showError.classList.add("success");
-							}
-							showError.textContent = response["msg"];
-						} else {
-							showError.classList.add("error");
-							showError.textContent("Error, account not created!");
-						}
-					}
-					xhr.send(`user=${username}&pass=${password}&email=${email}`);
+					xhr({
+						url : "/create",
+						data :`user=${username}&pass=${password}&email=${email}`,
+						method: "POST"
+					}).then(data => {
+						let response = JSON.parse(data);
+						console.log(data);
+						if (response["flag"] === true) toggleError(showError, "success", "error");
+						else toggleError(showError, "error", "success");
+						showError.textContent += response["msg"];
+					});
 				}
 			}, false);
 		</script>
