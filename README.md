@@ -24,7 +24,7 @@ Setting up your own server is easy! The following steps should help you create a
 5. Run `npm install` to install the project dependencies
 6. Login to mysql using the credentials you created
 7. Run `database.sql` to create the database and tables
-8. Finally -- `node server.js` to start up the server!
+8. Finally -- `node server.js --harmony` to start up the server!
 
 Game Premise:
 
