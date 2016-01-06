@@ -18,8 +18,10 @@
   "homepage": "https://github.com/RUJodan/SourceUndeadv2#readme",
   "dependencies": {
     "bluebird": "^3.1.1",
+    "body-parser": "^1.14.2",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
-    "mysql": "^2.10.0"
+    "mysql": "^2.10.0",
+    "password-hash": "^1.2.2"
   }
 }

@@ -11,18 +11,28 @@ h1,h2,h3,h4,h5,h6 {
 }
 .error {
 	background: #dd514c;
-    font-size: 100%;
-    letter-spacing: 0.01em;
-    color:white;
-    text-align: center;
-    height:35px;
-    vertical-align: center;
-    padding-top: 1%;
+	font-size: 100%;
+	letter-spacing: 0.01em;
+	color: white;
+	text-align: center;
+	height: 35px;
+	vertical-align: center;
+	padding-top: 1%;
+}
+.success {
+	background: #49E20E;
+	font-size: 100%;
+	letter-spacing: 0.01em;
+	color: white;
+	text-align: center;
+	height: 35px;
+	vertical-align: center;
+	padding-top: 1%;
 }
 .content {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+	max-width: 768px;
 }
