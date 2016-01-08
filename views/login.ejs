@@ -74,6 +74,10 @@
 					if (response["flag"] === true) toggleError(showError, "success", "error");
 					else toggleError(showError, "error", "success");
 					showError.textContent = response["msg"];
+					if (response["flag"] === false) {
+						console.log("redirecting to index");
+						setTimeout(() => window.location.href = "/", 2000);
+					}
 				});
 			}
 		}, false);

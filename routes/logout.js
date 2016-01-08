@@ -7,9 +7,10 @@ const express = require("express"),
 	Else, render the login page
  */
 app.get('/', (req, res) => {
-	console.log("session logged in, ", req.session.loggedIn);
-	if (!req.session.loggedIn) res.redirect("/login");
-	else res.render('index.ejs');
+	req.session.destroy(err => {
+		if (err) throw new Error(err);
+	});
+	res.redirect("/login");
 });
 
 module.exports = app;

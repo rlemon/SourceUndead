@@ -18,15 +18,17 @@ app.use(session({
 	secret: '1234567890QWERTY',
 	resave: false,
 	saveUninitialized: true,
-	cookie: {secure:true}
+	cookie: {secure:false}
 }));
 
 const index = require("./routes/index"),
 		create = require("./routes/create"),
-		login = require("./routes/login");
+		login = require("./routes/login"),
+		logout = require("./routes/logout");
 
 app.use('/', index);
 app.use('/create', create);
 app.use('/login', login);
+app.use('/logout', logout);
 
 module.exports = app;
