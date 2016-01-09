@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SourceUndead</title>
+		<a href="/logout">Logout</a>
+		<link rel="stylesheet" href="/css/mmo.css" />
+	</head>
+	<body>
+		<h1>SourceUndead</h1>
+		<h3>Location</h3>
+		<div id="wrap">
+			<div id="stats">
+				<div>
+					HP: <span id="hp"></span>/<span id="maxHP"></span>
+					<div class="health">
+						<span class="hpBar"></span>
+					</div>
+				</div>
+				<div>
+					Gold: <span id="gold">0</span>
+				</div>
+				<div>
+					<h4>Navigation</h4>
+					<table>
+					<tr>
+						<td><button class="divBtn" id="nw">NW</button></td>
+						<td><button class="divBtn" id="n">N</button></td>
+						<td><button class="divBtn" id="ne">NE</button></td>
+					</tr>
+					<tr>
+						<td><button class="divBtn" id="w">W</button></td>
+						<td class="clear">&nbsp;</td>
+						<td><button class="divBtn" id="e">E</button></td>
+					</tr>
+					<tr>
+						<td><button class="divBtn" id="sw">SW</button></td>
+						<td><button class="divBtn" id="s">S</button></td>
+						<td><button class="divBtn" id="se">SE</button></td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<div id="container">
+				<div id="map">
+					<ul>
+						<!-- <li ng-bind-template="{{player.name}}" ng-bind-html-unsafe="getPlayer(player)" ng-repeat="player in players"></li> -->
+					</ul>
+				</div>
+			</div>
+			<div id="log">
+				<h4>Event Log</h4>
+				<ul id="events"></ul>
+			</div>
+		</div>
+		<div id="footer">Follow me on <a href="https://github.com/RUJodan/zombie">GitHub!</a></div>
+		<!-- <script src="socket.io/socket.io.js"></script> -->
+		<script>
+			// io = io.connect();
+			// io.on("reloadXY",function() {
+			// 	io.emit("getXY");
+			// 	io.emit("getHP");
+			// 	io.emit("getGold");
+			// });
+			// io.emit("getXY");
+			// io.emit("getHP");
+			// io.emit("getGold");
+			// io.emit("stopDisconnection");
+			// io.on("event", function(obj) {
+			// 	var list = document.getElementById("events");
+			// 	var item = document.createElement("li");
+			// 	var node = document.createTextNode(obj.msg);
+			// 	item.appendChild(node);
+			// 	list.insertBefore(item,list.childNodes[0]);
+			// });
+		</script>
+	</body>
+</html>
