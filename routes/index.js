@@ -8,8 +8,8 @@ const express = require("express"),
  */
 app.get('/', (req, res) => {
 	console.log("session logged in, ", req.session.loggedIn);
-	if (!req.session.loggedIn) res.redirect("/login");
-	else res.render('index.ejs');
+	//if (!req.session.loggedIn) res.redirect("/login");
+	res.render('index.ejs');
 });
 
 module.exports = app;
