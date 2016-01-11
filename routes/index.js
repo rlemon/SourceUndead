@@ -1,6 +1,6 @@
 "use strict";
-const express = require("express"),
-	app = express.Router();
+import express from "express";
+const app = express.Router();
 
 /*
 	If the user is logged in, redirect to index page
@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
 
-module.exports = app;
+export default app;

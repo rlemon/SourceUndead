@@ -1,5 +1,5 @@
 "use strict";
-const app = require('./app');
+import app from './app';
 
 const server = app.listen(8080, () => {
 	const port = server.address().port;

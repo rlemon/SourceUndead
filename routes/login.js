@@ -1,9 +1,9 @@
 "use strict";
-const express = require("express"),
-	router = express.Router(),
-	bcrypt = require("bcryptjs"),
-	post = require("../lib/posts"),
-	Promise = require("bluebird");
+import express from "express";
+const router = express.Router();
+import bcrypt from "bcryptjs";
+import {login} from "../lib/posts";
+import Promise from "bluebird";
 	
 Promise.promisifyAll(bcrypt);
 
@@ -19,7 +19,7 @@ Promise.promisifyAll(bcrypt);
 router.route("/")
 	.get((req, res) => res.render('login.ejs'))
 	.post((req, res) => {
-		post.login(req.body.user).spread(user => {
+		login(req.body.user).spread(user => {
 			let response = {
 				"flag" : true,
 				"msg" : ""
@@ -48,4 +48,4 @@ router.route("/")
 		});
 	});
 
-module.exports = router;
+export default router;

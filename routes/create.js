@@ -1,7 +1,7 @@
 "use strict";
-const express = require("express"),
-	app = express.Router(),
-	post = require("../lib/posts");
+import express from "express";
+const app = express.Router();
+import {createAccount} from "../lib/posts";
 
 /*
 	Routing for /create
@@ -18,7 +18,7 @@ app.route("/")
 		const user = req.body.user;
 		const pass = req.body.pass;
 		const email = req.body.email;
-		post.createAccount(user,pass,email).then(response => res.send(response)); //create/reject account, send to user
+		createAccount(user,pass,email).then(response => res.send(response)); //create/reject account, send to user
 	});
 
-module.exports = app;
+export default app;
