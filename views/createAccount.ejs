@@ -2,37 +2,52 @@
 <html>
 	<head>
 		<title>Create Account</title>
-		<link rel="stylesheet" href="../css/pure.min.css">
+		<link rel="stylesheet" href="../css/skeleton.css">
+		<link rel="stylesheet" href="../css/normalize.css">
 		<link rel="stylesheet" href="../css/zombie.css">
+		<style>
+			.container {
+				max-width:800px;
+			}
+		</style>
 	</head>
 	<body>
-		<h2>Source Undead :: Create Account</h2>
+		<h2>SourceUndead</h2>
 		<div id="error"></div>
-		<div class="content">
-			<form class="pure-form pure-form-aligned">
-				<fieldset>
-					<div class="pure-control-group">
+		<div class="container">
+			<form>
+				<div class="row">
+					<div class="twelve columns">
 						<label for="name">Username</label>
-						<input class="pure-input-1-2" id="name" type="text" placeholder="Username">
+						<input class="u-full-width" id="name" type="text" placeholder="Username">
 					</div>
+				</div>
 
-					<div class="pure-control-group">
+				<div class="row">
+					<div class="twelve columns">
 						<label for="password">Password</label>
-						<input class="pure-input-1-2" id="password" type="password" placeholder="Password">
+						<input class="u-full-width" id="password" type="password" placeholder="Password">
 					</div>
+				</div>
 
-					<div class="pure-control-group">
+				<div class="row">
+					<div class="twelve columns">
 						<label for="email">Email Address</label>
-						<input class="pure-input-1-2" id="email" type="email" placeholder="Email Address">
+						<input class="u-full-width" id="email" type="email" placeholder="Email Address">
 					</div>
+				</div>
 
-					<div class="pure-controls">
-						<button id="createAccount" class="pure-button pure-button-primary">Submit</button>
+				<div class="row">
+					<div class="twelve columns">
+						<button id="createAccount" class="u-full-width button">Submit</button>
 					</div>
-					<div class="pure-controls">
+				</div>
+	
+				<div class="row">
+					<div class="twelve columns">
 						<small>Already have an account? <a href="/login">Return to Login</a></small>
 					</div>
-				</fieldset>
+				</div>
 			</form>
 		</div>
 		<script src="../js/functions.js"></script>
