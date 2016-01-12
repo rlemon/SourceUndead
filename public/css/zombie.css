@@ -21,6 +21,26 @@ a:hover {
 ul {
 	list-style:none;
 }
+.error {
+	background: #852020;
+	font-size: 100%;
+	letter-spacing: 0.01em;
+	color: white;
+	text-align: center;
+	height: 35px;
+	vertical-align: center;
+	padding-top: 1%;
+}
+.success {
+	background: #387a1d;
+	font-size: 100%;
+	letter-spacing: 0.01em;
+	color: white;
+	text-align: center;
+	height: 35px;
+	vertical-align: center;
+	padding-top: 1%;
+}
 .menu {
 	padding-top:10px;
 	background-color:#1A1A1A;
@@ -46,6 +66,12 @@ ul {
 	padding-left:10px;
 	padding-right:10px;
 	padding-bottom:25px;
+}
+button, .button {
+	color:gray;
+}
+button:hover, .button:hover {
+	color:white;
 }
 @media (min-width: 550px) {
 	.full-page {
