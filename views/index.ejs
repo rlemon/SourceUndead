@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/skeleton.css">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/zombie.css">
@@ -13,10 +14,12 @@
 		<div class="twelve columns full-page">
 			<div class="three columns menu full-page">
 				<h5>Player Menu</h5>
-				<ul class="pure-menu-list">
-					<li><a href="/join">Start Game</a></li>
-					<li><a href="/logout">Logout</a></li>
-				</ul>
+				<div class="menu-item twelve columns">
+					<i class="menu-option fa fa-gamepad fa-2x"></i><a href="/join" class="menu-option-text">Start Game</a>
+				</div>
+				<div class="menu-item twelve columns">
+					<i class="menu-option fa fa-power-off fa-2x"></i><a href="/logout" class="menu-option-text">Logout</a>
+					</div>
 			</div>
 			<div class="nine columns stats">
 				<div class="ten columns">
