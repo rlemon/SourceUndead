@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="Zombie" ng-controller="login">
+	<head>
+	<title ng-bind-template="Login{{title}}">Login</title>
+	<link rel="stylesheet" href="../css/zombie.css">
+</head>
+<body>
+	<h1>Source Undead</h1>
+	<div ng-cloak ng-class="{ 'error-msg' : errorFlag == true, 'success-msg' : errorFlag == false }">{{errorMsg}}</div>
+	<form name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+		<div>
+			<div>
+				<label class="label">Username:</label>
+				<input 
+					ng-class="{ 'has-error' : loginForm.user.$invalid && !loginForm.user.$pristine }"
+					ng-model="form.user" 
+					type="text" 
+					name="user" 
+					placeholder="Username.."
+					required />
+				<span ng-cloak class="error" ng-show="loginForm.user.$error.required && loginForm.user.$dirty">Username is required.</span>
+			</div>
+			<div>
+				<label class="label">Password:</label>
+				<input 
+					ng-class="{ 'has-error' : loginForm.pass.$invalid && !loginForm.pass.$pristine }"
+					ng-model="form.pass" 
+					type="password" 
+					name="pass" 
+					placeholder="Password.."
+					required />
+				<span ng-cloak class="error" ng-show="loginForm.pass.$error.required && loginForm.pass.$dirty">Password is required.</span>
+			</div>
+			<div>
+				<label class="label">&nbsp;</label>
+				<button class="divBtn" ng-disabled="loginForm.$invalid">Login</button>
+				<small>
+					<span class="inSpan">Don't have an account? <a href="/create">Create An Account</a>!</span>
+				</small>
+			</div>
+		</div>
+	</form>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+<script src="../js/controller.js"></script>
+<script>
+window.onload = function() {
+	document.querySelector("[name='user']").focus();
+}
+</script>
+</html>
