@@ -25,6 +25,9 @@ a:hover {
 	padding-left:15px;
 	padding-top:10px;
 	background-color:#1A1A1A;
+	-webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
 }
 .full-page {
 	height:95%;
@@ -32,8 +35,15 @@ a:hover {
 .header {
 	height:75px;
 	background-color: black;
+	-webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
 }
 .footer {
+	-webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+	margin-top:7px;
 	height:75px;
 	position:absolute;
 	bottom:0;
@@ -46,5 +56,12 @@ a:hover {
 @media (max-width: 550px) {
 	.full-page {
 		height:auto;
+	}
+	.stats {
+		padding-left:10px;
+		padding-right:10px;
+	}
+	.menu {
+		text-align:center;
 	}
 }
