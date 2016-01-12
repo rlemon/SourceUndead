@@ -1,6 +1,10 @@
+html {
+	height:100%;
+}
 body { 
-	background-color:black;
-	color:white;
+	height:100%;
+	background-color:#303030;
+	color:#BEBEBE;
 }
 input {
 	color:black;
@@ -8,33 +12,39 @@ input {
 h1,h2,h3,h4,h5,h6 { 
 	text-align: center; 
 }
-.error {
-	background: #852020;
-	font-size: 100%;
-	letter-spacing: 0.01em;
-	color: white;
-	text-align: center;
-	height: 35px;
-	vertical-align: center;
-	padding-top: 1%;
+ul {
+	list-style: disc inside none;
 }
-.success {
-	background: #387a1d;
-	font-size: 100%;
-	letter-spacing: 0.01em;
-	color: white;
-	text-align: center;
-	height: 35px;
-	vertical-align: center;
-	padding-top: 1%;
+a { 
+	color:gray;
 }
-.content {
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1em;
-	padding-right: 1em;
-	max-width: 768px;
-}
-a:visited {
+a:hover {
 	color:white;
+}
+.menu {
+	padding-left:15px;
+	padding-top:10px;
+	background-color:#1A1A1A;
+}
+.full-page {
+	height:95%;
+}
+.header {
+	height:75px;
+	background-color: black;
+}
+.footer {
+	height:75px;
+	position:absolute;
+	bottom:0;
+	background-color: black;
+	text-align:center;
+}
+.stats {
+	padding-top: 25px
+}
+@media (max-width: 550px) {
+	.full-page {
+		height:auto;
+	}
 }

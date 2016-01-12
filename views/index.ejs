@@ -1,32 +1,42 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" href="../css/skeleton.css">
-		<link rel="stylesheet" href="../css/normalize.css">
-		<link rel="stylesheet" href="../css/zombie.css">
+		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/zombie.css">
 	</head>
 	<body>
-		<div id="layout">
-			<div id="menu">
-				<div class="pure-menu">
-					<span class="pure-menu-heading">Player Menu</span>
-					<ul class="pure-menu-list">
-						<li class="pure-menu-item"><a href="#" class="pure-menu-link">Join Game</a></li>
-						<li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Logout</a></li>
-					</ul>
+		<div class="header twelve columns">
+			<h1>SourceUndead</h1>
+		</div>
+		<div class="twelve columns full-page">
+			<div class="three columns menu full-page">
+				<h5>Player Menu</h5>
+				<ul class="pure-menu-list">
+					<li><a href="/join">Start Game</a></li>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</div>
+			<div class="nine columns stats">
+				<div class="ten columns">
+					<fieldset>
+						<legend>General Statistics</legend>      
+					</fieldset>
+
+					<fieldset>
+						<legend>Stats as Human</legend>      
+					</fieldset>
+
+					<fieldset>
+						<legend>Stats as Zombie</legend>      
+					</fieldset>
 				</div>
 			</div>
-			<div class="container">
-				<div class="header">
-					<h1>SourceUndead</h1>
-					<h2>Landing Page</h2>
-				</div>
-		
-				<div class="content">
-					LOREM IPSUM BITCH        
-				</div>
+		</div>
+		<div class="footer twelve columns">
+			<div>
+				<a href="https://github.com/RUJodan/SourceUndeadv2">Follow this game on GitHub!</a>
 			</div>
 		</div>
 	</body>
 </html>
-
