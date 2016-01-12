@@ -18,6 +18,9 @@ a {
 a:hover {
 	color:white;
 }
+ul {
+	list-style:none;
+}
 .menu {
 	padding-top:10px;
 	background-color:#1A1A1A;
