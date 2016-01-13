@@ -2,7 +2,7 @@ html {
 	height:100%;
 }
 body { 
-	height:90%;
+	height:100%;
 	background-color:#303030;
 	color:#BEBEBE;
 }
@@ -46,11 +46,17 @@ ul {
 	background-color:#1A1A1A;
 }
 .full-page {
-	height:95%;
+	height:100%;
+}
+.footer, .header, .game {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .header {
 	height:75px;
 	background-color: black;
+	top:0;
 }
 .footer {
 	height:75px;
@@ -58,7 +64,7 @@ ul {
 	text-align:center;
 	padding-top:14px;
 	bottom:0;
-	position:fixed;
+	width: 100%;
 }
 .stats {
 	padding-top: 25px;
@@ -95,10 +101,10 @@ button:hover, .button:hover {
 	background-color:black;
 }
 .split-menu-top {
-	height:25%;
+	height:35%;
 }
 .split-menu-bottom {
-	height:70%;
+	height:65%;
 }
 .log {
 	overflow: scroll;
@@ -114,10 +120,11 @@ button:hover, .button:hover {
 .log-item:hover {
 	background-color: black;
 }
+.game {
+	padding: 75px 0 75px;
+	height:100%;
+}
 @media (min-width: 400px) {
-	.full-page {
-		height:99.4%;
-	}
 	.menu, .header {
 		-webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
