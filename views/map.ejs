@@ -1,78 +1,85 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
-		<title>SourceUndead</title>
-		<a href="/logout">Logout</a>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/css/mmo.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+		<link rel="stylesheet" href="css/zombie.css">
 	</head>
 	<body>
-		<h1>SourceUndead</h1>
-		<h3>Location</h3>
-		<div id="wrap">
-			<div id="stats">
-				<div>
-					HP: <span id="hp"></span>/<span id="maxHP"></span>
-					<div class="health">
-						<span class="hpBar"></span>
+		<div class="header twelve columns">
+			<h1>SourceUndead</h1>
+		</div>
+		<div class="twelve columns full-page">
+			<div class="three columns menu full-page">
+				<div class="split-menu-top">
+					<h5>Game Actions</h5>
+					<div class="menu-item twelve columns">
+						<i class="menu-option fa fa-gamepad fa-2x"></i><a href="/join" class="menu-option-text">Start Game</a>
+					</div>
+					<div class="menu-item twelve columns">
+						<i class="menu-option fa fa-power-off fa-2x"></i><a href="/logout" class="menu-option-text">Logout</a>
 					</div>
 				</div>
-				<div>
-					Gold: <span id="gold">0</span>
-				</div>
-				<div>
-					<h4>Navigation</h4>
-					<table>
-					<tr>
-						<td><button class="divBtn" id="nw">NW</button></td>
-						<td><button class="divBtn" id="n">N</button></td>
-						<td><button class="divBtn" id="ne">NE</button></td>
-					</tr>
-					<tr>
-						<td><button class="divBtn" id="w">W</button></td>
-						<td class="clear">&nbsp;</td>
-						<td><button class="divBtn" id="e">E</button></td>
-					</tr>
-					<tr>
-						<td><button class="divBtn" id="sw">SW</button></td>
-						<td><button class="divBtn" id="s">S</button></td>
-						<td><button class="divBtn" id="se">SE</button></td>
-					</tr>
-				</table>
+				<hr />
+				<div class="split-menu-bottom log">
+					<h5>Event Log</h5>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>This is a log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>This is a log another item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Gimme more log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Fuck yo log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Dat log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Mother fucking log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Hashtag log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Kendall's log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Canadian Log Item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Rejected log item</span>
+					</div>
+					<div class="log-item twelve columns">
+						<i class="menu-option-log fa fa-feed"></i><span>Mighty morphing log item</span>
+					</div>
 				</div>
 			</div>
-			<div id="container">
-				<div id="map">
-					<ul>
-						<!-- <li ng-bind-template="{{player.name}}" ng-bind-html-unsafe="getPlayer(player)" ng-repeat="player in players"></li> -->
-					</ul>
+			<div class="nine columns stats">
+				<div class="ten columns">
+					<fieldset>
+						<legend>General Statistics</legend>      
+					</fieldset>
+
+					<fieldset>
+						<legend>Stats as Human</legend>      
+					</fieldset>
+
+					<fieldset>
+						<legend>Stats as Zombie</legend>      
+					</fieldset>
 				</div>
-			</div>
-			<div id="log">
-				<h4>Event Log</h4>
-				<ul id="events"></ul>
 			</div>
 		</div>
-		<div id="footer">Follow me on <a href="https://github.com/RUJodan/zombie">GitHub!</a></div>
-		<!-- <script src="socket.io/socket.io.js"></script> -->
-		<script>
-			// io = io.connect();
-			// io.on("reloadXY",function() {
-			// 	io.emit("getXY");
-			// 	io.emit("getHP");
-			// 	io.emit("getGold");
-			// });
-			// io.emit("getXY");
-			// io.emit("getHP");
-			// io.emit("getGold");
-			// io.emit("stopDisconnection");
-			// io.on("event", function(obj) {
-			// 	var list = document.getElementById("events");
-			// 	var item = document.createElement("li");
-			// 	var node = document.createTextNode(obj.msg);
-			// 	item.appendChild(node);
-			// 	list.insertBefore(item,list.childNodes[0]);
-			// });
-		</script>
+		<div class="footer twelve columns">
+			<div>
+				<a href="https://github.com/RUJodan/SourceUndead">Follow this game on GitHub!</a>
+			</div>
+		</div>
 	</body>
 </html>

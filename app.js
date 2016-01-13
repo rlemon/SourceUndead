@@ -25,10 +25,12 @@ import index from "./routes/index";
 import create from "./routes/create";
 import login from "./routes/login";
 import logout from "./routes/logout";
+import map from "./routes/map";
 
 app.use('/', index);
 app.use('/create', create);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/map', map);
 
 export default app;
