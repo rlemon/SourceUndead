@@ -3,15 +3,8 @@ import express from 'express';
 import bodyParser from "body-parser";
 import session from "express-session";
 import {spinUp, print} from "./lib/redisDB";
-import socketio from "socket.io";
-import http from "http";
 
 const app = express();
-const server = http.Server(app);
-const io = socketio(server);
-
-io.on("connection", socket => console.log("User connected!"));
-
 const redis = spinUp();
 
 //setup view engine for EJS templating
