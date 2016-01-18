@@ -81,10 +81,9 @@
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
 		<script>
-			(() => {
-				"use strict";
-				let socket = io.connect('http://localhost:8080')
-			})();
+			var socket = io();
+			socket.emit("something");
+			socket.on("somethingelse", () => console.log("socket emitted clientside"));
 		</script>
 	</body>
 </html>
