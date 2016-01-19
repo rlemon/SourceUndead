@@ -27,5 +27,6 @@ Setting up your own server is easy! The following steps should help you create a
 *Note: Eventually I will export a distribution model that does not require babel. If you do this on your own, use `node server.js --harmony` to start the server.
 
 Game Status: [Under Development]
+================================
 
 You can currently create an account, login, and navigate the routing. I am currently setting up the map system, and progress is going well. Expect to be able to move, and see other players moving in the next couple of weeks!
