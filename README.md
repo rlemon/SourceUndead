@@ -26,10 +26,6 @@ Setting up your own server is easy! The following steps should help you create a
 
 *Note: Eventually I will export a distribution model that does not require babel. If you do this on your own, use `node server.js --harmony` to start the server.
 
-Game Premise:
+Game Status: [Under Development]
 
-11 players begin a match, all scattered around the map. One player is randomly infected by the virus! The zombie must then locate and infect all remaining humans to win. To survive the zombie, players must find each other, band together and fight back by crafting fortified cells, weapons, and more. BUT BEWARE! For each infection, the zombie will get stronger, so pay attention to who has infected the most humans!
-
-The game is won when either the humans have destroyed every zombie, or the zombies have infected every human.
-
-This game is a work in progress, so please feel free to contribute ideas and or make pull requests!
+You can currently create an account, login, and navigate the routing. I am currently setting up the map system, and progress is going well. Expect to be able to move, and see other players moving in the next couple of weeks!
