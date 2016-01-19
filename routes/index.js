@@ -8,7 +8,6 @@ const app = express.Router();
  */
 app.get('/', (req, res) => {
 	console.log("session logged in, ", req.session.loggedIn);
-	//if (!req.session.loggedIn) res.redirect("/login");
 	res.render('index.ejs');
 });
 
