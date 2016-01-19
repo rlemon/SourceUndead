@@ -21,7 +21,8 @@ Setting up your own server is easy! The following steps should help you create a
 5. Run `npm install` to install the project dependencies
 6. Login to mysql using the credentials you created
 7. Run `database.sql` to create the database and tables
-8. Run `babel-node server` to compile the code and start the server*
+8. Set up Redis server on your machine! Make sure Redis is running
+9. Run `babel-node server` to compile the code and start the server*
 
 *Note: Eventually I will export a distribution model that does not require babel. If you do this on your own, use `node server.js --harmony` to start the server.
 
