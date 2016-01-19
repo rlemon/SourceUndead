@@ -38,8 +38,11 @@ document.getElementById("createAccount").addEventListener("click", event => {
 			let response = JSON.parse(data);
 			console.log(data);
 			if (response["flag"] === true) toggleError(showError, "success", "error");
-			else toggleError(showError, "error", "success");
-			showError.textContent += response["msg"];
+			else {
+				toggleError(showError, "error", "success");
+				setTimeout(() => window.location.href = "/login", 2000);
+			}
+			showError.textContent = response["msg"];
 		});
 	}
 }, false);
