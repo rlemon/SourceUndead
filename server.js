@@ -73,5 +73,7 @@ import {move} from "./routes/io-functions";
 //socket routing
 io.sockets.on("connection", socket => {
 	console.log("Connection has been made", socket.request.sessionID);
-	socket.on("move", (data) => move(client, io, data, socket));
+	socket.on("move", (data) => move(io, data, socket.request));
 });
+
+export {client};

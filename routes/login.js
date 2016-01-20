@@ -4,6 +4,7 @@ const router = express.Router();
 import bcrypt from "bcryptjs";
 import {login} from "../lib/posts";
 import Promise from "bluebird";
+import {Player} from "../lib/Player";
 	
 Promise.promisifyAll(bcrypt);
 
@@ -33,10 +34,11 @@ router.route("/")
 				if (bool) { //create session, return success status
 					req.session.loggedIn = true;
 					req.session.user = user.id;
-					req.session.username = user.username;
+					req.session.player = new Player(user.id, user.username);
 					response.msg = "You have logged in!";
 					response.flag = false;
-					console.log(req.session.username, "Logged in...", req.sessionID);
+					console.log("Player", req.session.player);
+					console.log(req.session.player.user, "Logged in...", req.sessionID);
 				} else {
 					//reject, password is wrong
 					response.msg = "Your username and or password is incorrect."
