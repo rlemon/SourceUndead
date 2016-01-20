@@ -34,39 +34,7 @@
 					</div>
 					<div class="split-menu-bottom log twelve columns">
 						<h5>Event Log</h5>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>This is a log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>This is a log another item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Gimme more log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Fuck yo log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Dat log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Mother fucking log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Hashtag log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Kendall's log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Canadian Log Item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Rejected log item</span>
-						</div>
-						<div class="log-item twelve columns">
-							<i class="menu-option-log fa fa-plus"></i><span>Mighty morphing log item</span>
-						</div>
+						<div id="log"></div>
 					</div>
 				</div>
 			</div>
@@ -81,13 +49,37 @@
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.4/socket.io.js"></script>
 		<script>
-			var socket = io();
-			socket.on("somethingelse", (data) => console.log(data.msg));
-			Array.from(document.getElementsByClassName("grid-element")).forEach(element => {
-				element.addEventListener("click", (event) => {
-					socket.emit("move", {direction : event.target.getAttribute("data-direction")});
+			(() => {
+				"use strict";
+				const socket = io();
+				socket.on("somethingelse", (data) => {
+					let log = document.getElementById("log");
+
+					let wrapper = document.createElement("div");
+					wrapper.classList.add("log-item");
+					wrapper.classList.add("twelve");
+					wrapper.classList.add("columns");
+
+					let icon = document.createElement("i");
+					icon.classList.add("menu-option-log");
+					icon.classList.add("fa");
+					icon.classList.add("fa-plus");
+
+					let text = document.createElement("span");
+					text.textContent = data.msg;
+
+					wrapper.appendChild(icon);
+					wrapper.appendChild(text);
+
+					const lastLog = document.querySelector(".log-item")
+					log.insertBefore(wrapper, lastLog);
 				});
-			});
+				Array.from(document.getElementsByClassName("grid-element")).forEach(element => {
+					element.addEventListener("click", (event) => {
+						socket.emit("move", {direction : event.target.getAttribute("data-direction")});
+					});
+				});
+			})();
 		</script>
 	</body>
 </html>
