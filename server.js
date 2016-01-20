@@ -71,9 +71,18 @@ app.use("/", authenticate, index);
 import {move} from "./routes/io-functions";
 
 //socket routing
+let bucket = {}; //i haz a bukkit
 io.sockets.on("connection", socket => {
+	if (socket.request.sessionID && !bucket[socket.request.sessionID]) {
+		bucket[socket.request.sessionID] = socket.id; //nuuu they stealin mah bukkit
+	}
 	console.log("Connection has been made", socket.request.sessionID);
-	socket.on("move", (data) => move(io, data, socket.request));
+	socket.on("move", (data) => move(io, data, socket.request, bucket));
+	socket.on('disconnect', function () {
+        console.log('Client disconnected');
+        delete bucket[socket.request.sessionID];
+        io.sockets.emit('disconnect');
+    });
 });
 
 export {client};

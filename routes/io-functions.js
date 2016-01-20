@@ -1,7 +1,7 @@
 "use strict";
 import {client} from "../server";
 
-export function move(io, data, socket) {
+export function move(io, data, socket, bucket) {
 	let x = 0;
 	let y = 0; //set incrememt to player location to 0
 	if (data.direction === "null") {
@@ -15,27 +15,27 @@ export function move(io, data, socket) {
 		case "ne":
 			x++;
 			y++
-                        break;
+            break;
 		case "n":
 			y++;
-                        break;
+            break;
 		case "sw":
 			x--;
 			y--;
-                        break;
+            break;
 		case "se":
 			x++;
 			y--
-                        break;
+            break;
 		case "s":
 			y--;
-                        break;
+            break;
 		case "w":
 			x--;
-                        break;
+            break;
 		case "e":
 			x++;
-                        break;	
+            break;	
 	}
 	if (socket.session.player.x + x > 100 || socket.session.player.x + x < 1) x = 0;
 	if (socket.session.player.y + y > 100 || socket.session.player.y + y < 1) y = 0;
@@ -43,5 +43,6 @@ export function move(io, data, socket) {
 	socket.session.player.y += y;
 	const string = `${socket.session.player.user} has moved ${data.direction} to [${socket.session.player.x},${socket.session.player.y}]`;
 	console.log(string);
+	console.log(bucket)
 	io.sockets.emit("somethingelse", {msg:string});
 }
